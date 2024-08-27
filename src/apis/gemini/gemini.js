@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const generateContentAPI = async (userPrompt) => {
   const response = await axios.post(
-    "http://localhost:8090/api/v1/openai/generate-content",
+    "https://muse-ai-backend-aswrsv0dt-laaniths-projects.vercel.app/api/v1/openai/generate-content",
     {
       prompt: userPrompt,
     },
