@@ -3,7 +3,7 @@ import axios from "axios";
 //stripe payment
 export const handleFreeSubscriptionAPI = async () => {
   const response = await axios.post(
-    "https://muse-ai-backend-aswrsv0dt-laaniths-projects.vercel.app/api/v1/stripe/free-plan",
+    "https://muse-ai-backend.vercel.app/api/v1/stripe/free-plan",
     {},
     {
       withCredentials: true,
@@ -17,7 +17,7 @@ export const handleFreeSubscriptionAPI = async () => {
 
 export const createStripePaymentIntentAPI = async (payment) => {
   const response = await axios.post(
-    "https://muse-ai-backend-aswrsv0dt-laaniths-projects.vercel.app/api/v1/stripe/checkout",
+    "https://muse-ai-backend.vercel.app/api/v1/stripe/checkout",
     {
       amount: Number(payment?.amount),
       subscriptionPlan: payment?.plan,
@@ -32,7 +32,7 @@ export const createStripePaymentIntentAPI = async (payment) => {
 
 export const verifyPaymentAPI = async (paymentId) => {
   const response = await axios.post(
-    `https://muse-ai-backend-aswrsv0dt-laaniths-projects.vercel.app/api/v1/stripe/verify-payment/${paymentId}`,
+    `https://muse-ai-backend.vercel.app/api/v1/stripe/verify-payment/${paymentId}`,
     {},
     {
       withCredentials: true,
